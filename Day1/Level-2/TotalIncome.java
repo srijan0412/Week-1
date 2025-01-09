@@ -16,7 +16,7 @@ class TotalIncome {
         // Calculation of Total income
         double totalIncome = salary + bonus;
 
-        System.out.printf("The salary is INR " + salary + " and bonus is INR " + bonus + ". Hence Total Income is INR " + totalIncome);
+        System.out.println("The salary is INR " + salary + " and bonus is INR " + bonus + ". Hence Total Income is INR " + totalIncome);
         scanner.close();
     }
 }
