@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class QuotientRemainder {
+class QuotientRemainder {
     public static void main(String[] args) {
 
         //Initializing the Scanner object
