@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class AthleteRounds {
+class AthleteRounds {
     public static void main(String[] args) {
         //Initializing the Scanner object
         Scanner scanner = new Scanner(System.in);
