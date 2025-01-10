@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-class FactorialWhile {
+class FactorialFor {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Taking number as input from the user 
+        // Taking n as input from the user
         System.out.print("Enter a positive integer: ");
         int n = scanner.nextInt();
 
@@ -14,12 +14,10 @@ class FactorialWhile {
             return;
         }
 
-        // Compute factorial using while loop
+        // Compute factorial using for loop
         long factorial = 1;
-        int i = 1;
-        while (i <= n) {
+        for (int i = 1; i <= n; i++) {
             factorial *= i;
-            i++;
         }
 
         System.out.println("Factorial of " + n + " is: " + factorial);
