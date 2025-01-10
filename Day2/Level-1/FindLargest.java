@@ -38,9 +38,9 @@ class FindLargest {
         }
         
         // printing the output
-        System.out.println("Is the first number the smallest? " + isNumber1Biggest);
-        System.out.println("Is the second number the smallest? " + isNumber2Biggest);
-        System.out.println("Is the third number the smallest? " + isNumber3Biggest);
+        System.out.println("Is the first number the Largest? " + isNumber1Biggest);
+        System.out.println("Is the second number the Largest? " + isNumber2Biggest);
+        System.out.println("Is the third number the Largest? " + isNumber3Biggest);
         scanner.close();
     }
 }
