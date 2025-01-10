@@ -46,6 +46,7 @@ class OddEvenNumbers {
         }
         System.out.println();
 
+        // Closing the scanner object 
         scanner.close();
     }
 }
