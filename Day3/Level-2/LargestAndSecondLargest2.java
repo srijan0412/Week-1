@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class NumberOperation {
+class LargestAndSecondLargest2 {
     public static void main(String[] args){
         // Initializing the scanner class object 
         Scanner sc = new Scanner(System.in);
@@ -21,7 +21,20 @@ class NumberOperation {
             index++;
             number /= 10;
 
-            if (index == maxDigits) break; // breaking if it exceeds the length of the array
+            if (index == maxDigits) { 
+                // Doubling the size of maxDigits
+                maxDigits = 2 * maxDigits;
+
+                //Initializing a new temp-Array of size maxdigits 
+                //Copying all the elements from digits to temp-array
+                int tempDigits[] = new int[maxDigits];
+                for (int i=0; i<index; i++){
+                    tempDigits[i] = digits[i];
+                }
+
+                // Assigning the digits array to tempDigits 
+                digits = tempDigits;
+            };
         }
 
         // Iterating throught the digits array and finding the minimum and the maximum
