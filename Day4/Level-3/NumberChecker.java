@@ -101,6 +101,75 @@ class NumberChecker {
         return result;
     }
 
+    // Method to find the sum of all the digits in a number
+    public static int sumOfDigits(int number){
+        int digits[] = storeDigits(number);
+        int digitCount = digits.length;
+        
+        // Calculating the sum 
+        int sum = 0;
+        for (int i = 0; i < digitCount; i++) {
+            sum += digits[i];
+        }
+
+        // returning the sum 
+        return sum ;
+    }
+
+    // Method to find the sum of square of the digits in the number 
+    public static int sumOfSquaresOfDigits(int number) {
+        int digits[] = storeDigits(number);
+        int digitCount = digits.length;
+        int sum = 0;
+        for (int i = 0; i < digitCount; i++){
+            sum += Math.pow(digits[i], 2);
+        }
+        return sum;
+    } 
+
+    // Method to check id the number is a harshad number 
+    public static boolean isHarshad(int number) {
+		int digits[] = storeDigits(number);
+        int digitCount = digits.length;
+        int originalNumber = number;
+        
+        // finding the sum 
+        int sum = 0;
+        for (int i = 0; i < digitCount; i++){
+            sum += digits[i];
+        }
+		
+        //Output
+        if (originalNumber % sum == 0) {
+            return true;
+        } 
+        return false;
+    }
+
+    // Method to find the frequency of the digits in a number
+    public static int[][] findDigitFrequency(int number) {
+        // Create a 2D array to store digit and frequency
+        int[][] frequencyArray = new int[10][2];
+
+        // Initialize the first column with digits 0-9
+        for (int i = 0; i < 10; i++) {
+            frequencyArray[i][0] = i; // Digit
+            frequencyArray[i][1] = 0; // Frequency
+        }
+
+        // Convert the number to a string to iterate through each digit
+        String numberStr = Integer.toString(Math.abs(number));
+
+        // Count the frequency of each digit
+        for (char digitChar : numberStr.toCharArray()) {
+            int digit = Character.getNumericValue(digitChar);
+            frequencyArray[digit][1]++; 
+        }
+
+        return frequencyArray;
+    }
+
+
     public static void main(String[] args) {
         int number = 2457;
 
@@ -111,6 +180,11 @@ class NumberChecker {
         boolean isArmstrong = NumberChecker.isArmstrong(number);
         int largestAndSecondLargest[] = NumberChecker.findLargestAndSecondLargest(number);
         int smallestAndSecondSmallest[] = NumberChecker.findSmallestAndSecondSmallest(number);
+        int sumOfDigits = NumberChecker.sumOfDigits(number);
+        int sumOfSquareOfDigits = NumberChecker.sumOfSquaresOfDigits(number);
+        boolean isHarshad = NumberChecker.isHarshad(number);
+        int frequency[][] = NumberChecker.findDigitFrequency(number);
+
         
         // Showing output 
         System.out.println("The number is : " + number);
@@ -124,5 +198,15 @@ class NumberChecker {
         System.out.println("Is is a Armstrong number: " + isArmstrong);
         System.out.println("Largest number is " + largestAndSecondLargest[0] + " and second largest number is " + largestAndSecondLargest[1]);
         System.out.println("Smallest number is " + smallestAndSecondSmallest[0] + " and second Smallest number is " + smallestAndSecondSmallest[1]);
+        
+        System.out.println("Sum of the digits: " + sumOfDigits);
+        System.out.println("Sum of square of the digits: " + sumOfSquareOfDigits);
+        System.out.println("Is is a Harshad number: " + isHarshad);
+        System.out.println("Frequency of the digits : ");
+        for (int i = 0; i < 10; i++) {
+            if (frequency[i][1] > 0) {
+                System.out.println(frequency[i][0] + " : " + frequency[i][1]);
+            }
+        }
     }
 }
