@@ -219,6 +219,108 @@ class NumberChecker {
         return number % 7 == 0 || number % 10 == 7;
     }
 
+    // Method to find factors of a number and return them as an array
+    public static int[] findFactors(int number) {
+        // Counting the factors 
+        int factorCount = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                factorCount++;
+            }
+        }
+        //Find the factors and adding it to the factors array
+        int factors[] = new int[factorCount];
+        int idx = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                factors[idx] = i;
+                idx++;
+            }
+        }
+
+        return factors;
+    }
+
+    // Method to find the greatest factor of a number using the factors array
+    public static int greatestFactor(int number) {
+        int factors[] = findFactors(number);
+        return factors[factors.length - 1]; // The last element is the greatest factor
+    }
+
+    // Method to find the sum of the factors using factors array and return the sum
+    public static int sumOfFactors(int number) {
+        int factors[] = findFactors(number);
+        int sum = 0;
+        for (int factor : factors) {
+            sum += factor;
+        }
+        return sum;
+    }
+
+     // Method to find the product of the factors using factors array and return the product
+    public static int productOfFactors(int number) {
+        int factors[] = findFactors(number);
+        int product = 1;
+        for (int factor : factors) {
+            product *= factor;
+        }
+        return product;
+    }
+
+    // Method to find the product of the cube of the factors using the factors array
+    public static double productOfCubesOfFactors(int number) {
+        int factors[] = findFactors(number);
+        double product = 1;
+        for (int factor : factors) {
+            product *= Math.pow(factor, 3);
+        }
+        return product;
+    }
+
+    // Method to check if a number is a perfect number
+    public static boolean isPerfect(int number) {
+        int sum = sumOfFactors(number) - number; // Exclude the number itself
+        return sum == number;
+    }
+
+    // Method to check if a number is an abundant number
+    public static boolean isAbundant(int number) {
+        int sum = sumOfFactors(number) - number; // Exclude the number itself
+        return sum > number;
+    }
+
+    // Method to check if a number is a deficient number
+    public static boolean isDeficient(int number) {
+        int sum = sumOfFactors(number) - number; // Exclude the number itself
+        return sum < number;
+    }
+
+    // Method to check if a number is a strong number
+    public static boolean isStrong(int number) {
+        int sum = 0;
+        int temp = number;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += factorial(digit);
+            temp /= 10;
+        }
+
+        return sum == number;
+    }
+
+    // Helper method to calculate factorial
+    private static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        int result = 1;
+        for (int i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         int number = 2457;
@@ -263,5 +365,13 @@ class NumberChecker {
         System.out.println("Is it a spy number? " + isSpy(number));
         System.out.println("Is it an automorphic number? " + isAutomorphic(number));
         System.out.println("Is it a buzz number? " + isBuzz(number));
+        System.out.println("Greatest Factor: " + greatestFactor(number));
+        System.out.println("Sum of Factors: " + sumOfFactors(number));
+        System.out.println("Product of Factors: " + productOfFactors(number));
+        System.out.println("Product of Cubes of Factors: " + productOfCubesOfFactors(number));
+        System.out.println("Is Perfect Number: " + isPerfect(number));
+        System.out.println("Is Abundant Number: " + isAbundant(number));
+        System.out.println("Is Deficient Number: " + isDeficient(number));
+        System.out.println("Is Strong Number: " + isStrong(number));
     }
 }
