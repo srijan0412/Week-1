@@ -26,7 +26,7 @@ public class TrigonometryFunctions {
     
         // Taking angle as input from the user 
         System.out.print("Enter the angle: ");
-        double angle = sc.nextInt();
+        double angle = sc.nextDouble();
 
         // Calling the function 
         double result[] = obj.calculateTrigonometricFunctions(angle);
