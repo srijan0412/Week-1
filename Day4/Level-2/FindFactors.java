@@ -1,7 +1,7 @@
 import java.lang.Math;
 import java.util.Scanner;
 
-public class FindFactors {
+class FindFactors {
     // Function defination
     public static int sumOfFactors(int factors[], int Count) {
         int sum = 0;
