@@ -29,5 +29,7 @@ class CreateSubstring {
         // Output :
         System.out.println("The sub-Strings are : " + substring1 + " and " + substring2);
         System.out.println("Both are " + (substring1.equals(substring2) ? "Equal" : "Unequal"));
+
+        sc.close();
     }
 }
