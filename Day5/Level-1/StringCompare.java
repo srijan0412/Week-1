@@ -5,12 +5,14 @@ class StringCompare {
         // Defining the scanner class object 
         Scanner sc = new Scanner(System.in);
 
+        // Taking input from the user 
         System.out.print("Enter string 1: ");
         String string1 = sc.next();
 
         System.out.print("Enter string 2: ");
         String string2 = sc.next();
         
+        // Checking if the strings are of same length 
         if (string1.length() != string2.length()) {
             System.out.println("Your strings are not of same size.");
             sc.close();
