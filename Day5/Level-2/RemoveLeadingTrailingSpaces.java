@@ -62,5 +62,6 @@ class RemoveLeadingTrailingSpaces {
         System.out.println("Trimmed using charAt(): [" + trimmedText + "]");
         System.out.println("Trimmed using built-in method: [" + trimmedUsingBuiltIn + "]");
         System.out.println("Are the results equal? " + areEqual);
+        sc.close();
     }
 }
