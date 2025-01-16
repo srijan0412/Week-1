@@ -1,27 +1,6 @@
 import java.util.Scanner;
 
 class FirstNonRepeatingCharacter {
-    public static void main(String[] args) {
-        // Create Scanner object to take user input
-        Scanner sc = new Scanner(System.in);
-
-        // Take input string from the user
-        System.out.print("Enter a string: ");
-        String input = sc.nextLine();
-
-        // Call the method to find the first non-repeating character
-        char result = findFirstNonRepeatingCharacter(input);
-
-        // Display the result
-        if (result != '\0') {
-            System.out.println("The first non-repeating character is: " + result);
-        } else {
-            System.out.println("No non-repeating character found.");
-        }
-
-        sc.close(); // Close Scanner
-    }
-
     // Method to find the first non-repeating character in a string
     public static char findFirstNonRepeatingCharacter(String text) {
         int[] frequency = new int[256]; // Array to store frequency of ASCII characters
@@ -41,5 +20,26 @@ class FirstNonRepeatingCharacter {
         }
 
         return '\0'; // Return null character if no non-repeating character is found
+    }
+    
+    public static void main(String[] args) {
+        // Create Scanner object to take user input
+        Scanner sc = new Scanner(System.in);
+
+        // Take input string from the user
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        // Call the method to find the first non-repeating character
+        char result = findFirstNonRepeatingCharacter(input);
+
+        // Display the result
+        if (result != '\0') {
+            System.out.println("The first non-repeating character is: " + result);
+        } else {
+            System.out.println("No non-repeating character found.");
+        }
+
+        sc.close(); // Close Scanner
     }
 }
